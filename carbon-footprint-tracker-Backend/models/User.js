@@ -4,9 +4,19 @@ const userSchema=new mongoose.Schema(
   {
     name:String,
     email:{type:String, 
-        unique:true 
+           unique:true 
       },
     password:String,
+    resetOtp:{
+      type:String
+    },
+    otpExpires:{
+      type:Date
+    },
+    isotpVerified:{
+      type:Boolean,
+      default:false
+    },
   },
   { timestamps:true}
 );
